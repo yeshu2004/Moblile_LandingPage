@@ -16,6 +16,7 @@ import Lenis from "lenis";
 export default function Home() {
 
   useEffect(()=>{
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const lenis = new Lenis({
       autoRaf: true,
     });
