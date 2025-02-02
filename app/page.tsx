@@ -1,3 +1,5 @@
+'use client'
+
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import img2 from "@/images/hero3.jpg";
@@ -8,8 +10,19 @@ import { LuReceiptIndianRupee } from "react-icons/lu";
 import Link from "next/link";
 import lazyimg from "@/images/lazyy.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 export default function Home() {
+
+  useEffect(()=>{
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+  },[])
+
+
+
   return (
     <main className="bg-black text-[#FFFEEF] min-h-screen">
       <div
