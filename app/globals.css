@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'FUTURABC';
+  src: url('/fonts/FUTURABC.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'Spatchers-Regular';
+  src: url('/fonts/Spatchers-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura-Light-Condensed-BT';
+  src: url('/fonts/Futura-Light-Condensed-BT.ttf') format('truetype');  
+}
