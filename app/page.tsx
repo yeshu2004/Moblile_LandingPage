@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
@@ -12,17 +12,21 @@ import lazyimg from "@/images/lazyy.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { motion } from "motion/react";
+import elem1 from "@/images/elem-1.png";
+import { IoLogoInstagram } from "react-icons/io5";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 export default function Home() {
-
-  useEffect(()=>{
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-  },[])
-
-
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <main className="bg-black text-[#FFFEEF] min-h-screen">
@@ -47,9 +51,38 @@ export default function Home() {
         {/* Title */}
         <div className="z-10 absolute flex flex-col items-center text-[6.5vh] leading-none bottom-1 left-1/2 -translate-x-1/2 w-full px-4">
           <div className="flex flex-col items-center uppercase font-futurabc">
-            <h1>Unleashed</h1>
-            <h1>Innovation</h1>
-            <h1>Creatively 2025</h1>
+            <div className="h-fit w-fit overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1 }}
+                className="mix-blend-difference"
+              >
+                Unleashed
+              </motion.h1>
+            </div>
+            <div className="h-fit w-fit overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="mix-blend-difference"
+              >
+                Innovation
+              </motion.h1>
+            </div>
+            <div className="h-fit w-fit overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="mix-blend-difference"
+                style={{ fontSize: "6.5vh" }}
+              >
+                {" "}
+                2025
+              </motion.h1>
+            </div>
           </div>
 
           {/* Date and Location */}
@@ -64,8 +97,9 @@ export default function Home() {
                 <h5>10 February 2025</h5>
               </div>
             </div>
-            <div className="text-lg w-full text-center font-futurabc uppercase">
-              <span>Book Now</span>
+            <div className="text-lg w-full text-center font-futurabc uppercase flex items-center justify-center">
+              <Image src={elem1} alt="UX Logo" width={120} height={120} />
+              <span className="absolute text-black">Book Now</span>
             </div>
           </div>
         </div>
@@ -107,7 +141,10 @@ export default function Home() {
           <h1 className="uppercase font-futurabc text-2xl mb-10">
             More About the event
           </h1>
-          <div className="bg-[#FFFEEF] text-black h-full w-full rounded-2xl px-5 py-5">
+          <div className="bg-[#FFFEEF] text-black h-full w-full rounded-2xl px-5 py-5 pt-7 relative">
+            <h1 className="absolute right-1/2 translate-x-1/2 top-1 font-mayonice text-red-500 z-10 text-lg ">
+              filling fast...
+            </h1>
             <div className="font-futurabc text-[3.6vh] uppercase text-center flex items-center gap-1">
               <span>
                 <CiMicrophoneOn />
@@ -168,6 +205,66 @@ export default function Home() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-[40vh] w-full overflow-hidden">
+        {/* Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/footer-short-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
+
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Footer Content */}
+        <div className="relative z-10 flex flex-col gap-5 items-center justify-center h-full text-white text-center px-6 font-futuraCondensed">
+          {/* Title */}
+          <h2 className="text-4xl font-bold uppercase  border-b pb-1">
+            Stay Connected
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-lg leading-[1.3] max-w-lg mt-2 opacity-80">
+          Design. Innovate. Elevate. Join us for exclusive insights, creative challenges, and game-changing ideas!
+          </p>
+
+          {/* Social Media Links */}
+          <div className="flex space-x-6 mt-4">
+            <Link
+              href="#"
+              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
+            >
+              <span className="text-2xl transition-all hover:text-pink-400">
+                <IoLogoInstagram />
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
+            >
+              <span className="text-2xl transition-all hover:text-blue-400">
+                <FaLinkedinIn />
+              </span>
+            </Link>
+            <Link
+              href="#"
+              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
+            >
+              <span className="text-2xl transition-all hover:text-red-400">
+                <SiGmail />
+              </span>
+            </Link>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="mt-6 text-xs opacity-70">
+            <p>© 2025 Ux Club. All rights reserved.</p>
           </div>
         </div>
       </div>

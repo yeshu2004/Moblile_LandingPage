@@ -16,3 +16,8 @@
   font-family: 'Futura-Light-Condensed-BT';
   src: url('/fonts/Futura-Light-Condensed-BT.ttf') format('truetype');  
 }
+
+@font-face {
+  font-family: 'Mayonice';
+  src: url('/fonts/Mayonice.ttf') format('truetype');
+}

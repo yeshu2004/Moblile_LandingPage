@@ -12,6 +12,7 @@ export default {
         futurabc: ['FUTURABC', 'sans-serif', 'Futura-Light-Condensed-BT'],
         spatchers: ['Spatchers-Regular', 'cursive'],
         futuraCondensed: ['Futura-Light-Condensed-BT', 'sans-serif'],
+        mayonice: ['Mayonice', 'cursive'],
       },
     },
   },
