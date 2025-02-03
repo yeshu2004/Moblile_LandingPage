@@ -10,7 +10,7 @@ import { LuReceiptIndianRupee } from "react-icons/lu";
 import Link from "next/link";
 import lazyimg from "@/images/lazyy.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import { motion } from "motion/react";
 import elem1 from "@/images/elem-1.png";
@@ -19,6 +19,8 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 
 export default function Home() {
+  const [isMobileView, setIsMobileView] = useState(true);
+
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: number) {
@@ -26,7 +28,23 @@ export default function Home() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-  }, []);
+
+    // Check the screen width on load
+    if (window.innerWidth > 768) {
+      setIsMobileView(false);
+    }
+  }, [setIsMobileView]);
+
+
+  if (!isMobileView) {
+    return (
+      <div className="h-screen flex items-center justify-center text-center bg-black text-[#FFFEEF] px-5">
+        <h1 className="text-4xl font-futurabc">
+        &quot;Whoa, slow down there, big screen! This site&apos;s <span className="text-blue-500">strictly mobile</span> - it&apos;s like trying to fit a skyscraper in a shoebox. Grab your phone, slide in, and let the fun begin!&quot;
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <main className="bg-black text-[#FFFEEF] min-h-screen">
@@ -53,7 +71,7 @@ export default function Home() {
           <div className="flex flex-col items-center uppercase font-futurabc">
             <div className="h-fit w-fit overflow-hidden">
               <motion.h1
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1 }}
                 className="mix-blend-difference"
@@ -63,9 +81,9 @@ export default function Home() {
             </div>
             <div className="h-fit w-fit overflow-hidden">
               <motion.h1
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
+                transition={{ duration: 1, delay: 0.5 }}
                 className="mix-blend-difference"
               >
                 Innovation
@@ -73,9 +91,9 @@ export default function Home() {
             </div>
             <div className="h-fit w-fit overflow-hidden">
               <motion.h1
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
+                transition={{ duration: 1, delay: 1 }}
                 className="mix-blend-difference"
                 style={{ fontSize: "6.5vh" }}
               >
