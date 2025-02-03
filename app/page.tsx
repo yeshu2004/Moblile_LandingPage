@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <div className="px-5 mt-10 pb-10">
+        <div className="px-5 mt-10 pb-6">
           <h1 className="uppercase font-futurabc text-2xl mb-10">
             More About the event
           </h1>
