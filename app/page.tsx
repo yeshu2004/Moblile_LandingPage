@@ -126,16 +126,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className='overflow-hidden w-full'>
-        <div className='font-futurabc flex items-center gap-4 py-2 w-full'>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Creativity</p> <span><FaRegFaceLaughBeam /></span></h5>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Innovation</p><span><GrAction /></span></h5>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Talent</p><span><CiMicrophoneOn /></span></h5>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Exploration</p><span><GiNewShoot/></span></h5>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Humor</p><span><FaRegLaughSquint /></span></h5>
-          <h5 className='w-fit rounded-full flex items-center gap-4'><p>Competition</p> <span><GiSportMedal /></span></h5>
-        </div>
-      </div> */}
       <div>
         <div className="px-5 mt-10 pb-10">
           <h1 className="uppercase font-futurabc text-2xl mb-10">
