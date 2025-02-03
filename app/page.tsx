@@ -166,7 +166,7 @@ export default function Home() {
             <div className="pt-3">
               <div className="font-futurabc flex items-center gap-2 text-2xl">
                 <span className="bg-black h-2 w-2 rounded-full"></span>
-                <h1>Prize Money: ₹4,000</h1>
+                <h1>Prize Money: ₹3,000</h1>
               </div>
               <div className="font-futurabc flex items-center gap-2 text-xl text-zinc-800">
                 <span className="bg-black h-2 w-2 rounded-full"></span>
