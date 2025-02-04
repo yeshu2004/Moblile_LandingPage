@@ -162,7 +162,7 @@ export default function Home() {
             <span>
               <LuReceiptIndianRupee />
             </span>
-            <h1>price</h1>
+            <h1>prize</h1>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@ export default function Home() {
               </div>
               <div className="font-futurabc flex items-center gap-2 text-xl text-zinc-800">
                 <span className="bg-black h-2 w-2 rounded-full"></span>
-                <h1>Time: 1:30 p.m.–6:00 p.m.</h1>
+                <h1>Time: 1:30 p.m. – 6:00 p.m.</h1>
               </div>
               <div className="font-futurabc flex items-center gap-2 text-xl text-zinc-800">
                 <span className="bg-black h-2 w-2 rounded-full"></span>

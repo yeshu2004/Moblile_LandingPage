@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import logo from "@/images/UX_logo.png";
+import Image from 'next/image';
+import { IoIosClose } from "react-icons/io";
 
 export default function EventDetails() {
   const [isMobileView, setIsMobileView] = useState(true);
@@ -28,16 +31,19 @@ export default function EventDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-[#FFFEEF] p-5">
+    <div className="min-h-screen bg-black text-[#FFFEEF] pt-2 p-5">
       {/* Back Button */}
+      <div className="flex items-center justify-center">
+        <div className="flex items-center">
+          <Link href={"/"}className="relative z-10"><Image src={logo} alt="UX Logo" width={80} height={80} /></Link>
+        </div>
+      </div>
       <Link
         href={"/"}
-        className="flex items-center gap-1 text-[#FFFEEF] mb-6 font-futuraCondensed"
+        className="flex items-center gap-1 text-[#FFFEEF] mb-6 font-futuraCondensed absolute right-2 top-2"
       >
-        <IoArrowBack className="text-sm" />
-        <span>Back</span>
+        <IoIosClose  className="text-3xl" />
       </Link>
-
       <div className="space-y-8">
         <h1 className="text-4xl font-futurabc uppercase text-center">
           Event Details
