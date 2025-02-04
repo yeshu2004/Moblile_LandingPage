@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { IoArrowBack } from "react-icons/io5";
 import logo from "@/images/UX_logo.png";
 import Image from 'next/image';
 import { IoIosClose } from "react-icons/io";
