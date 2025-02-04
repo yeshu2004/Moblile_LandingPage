@@ -50,16 +50,12 @@ export default function Footer() {
               <FaLinkedinIn />
             </span>
           </Link>
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=uxclubconnect@gmail.com"
-            target="_blank" // Opens Gmail in a new tab
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
-          >
-            <span className="text-2xl transition-all hover:text-red-500 cursor-pointer">
-              <SiGmail />
-            </span>
-          </a>
+          <a 
+							href="mailto:uxclubconnect@gmail.com" 
+							className="text-2xl transition-all hover:text-red-500"
+						>
+							<SiGmail />
+						</a>
         </div>
 
         {/* Footer Bottom */}
