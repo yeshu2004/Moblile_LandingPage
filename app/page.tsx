@@ -14,15 +14,17 @@ import { useEffect, useState } from "react";
 import Lenis from "lenis";
 import { motion } from "motion/react";
 import elem1 from "@/images/elem-1.png";
-import { IoLogoInstagram } from "react-icons/io5";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
 
 export default function Home() {
   const [isMobileView, setIsMobileView] = useState(true);
 
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      lerp: 0.1, 
+      wheelMultiplier: 0.75, 
+      touchMultiplier: 2.25,
+      infinite: false,
+    });
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -33,14 +35,16 @@ export default function Home() {
     if (window.innerWidth > 768) {
       setIsMobileView(false);
     }
-  }, [setIsMobileView]);
-
+  }, []);
 
   if (!isMobileView) {
     return (
       <div className="h-screen flex items-center justify-center text-center bg-black text-[#FFFEEF] px-5">
-        <h1 className="text-4xl font-futurabc">
-        &quot;Whoa, slow down there, big screen! This site&apos;s <span className="text-blue-500">strictly mobile</span> - it&apos;s like trying to fit a skyscraper in a shoebox. Grab your phone, slide in, and let the fun begin!&quot;
+        <h1 className="md:text-4xl text-2xl font-futurabc">
+          &quot;Whoa, slow down there, big screen! This site&apos;s{" "}
+          <span className="text-blue-500">strictly mobile</span> - it&apos;s
+          like trying to fit a skyscraper in a shoebox. Grab your phone, slide
+          in, and let the fun begin!&quot;
         </h1>
       </div>
     );
@@ -117,7 +121,14 @@ export default function Home() {
             </div>
             <div className="text-lg w-full text-center font-futurabc uppercase flex items-center justify-center">
               <Image src={elem1} alt="UX Logo" width={120} height={120} />
-              <span className="absolute text-black">Book Now</span>
+              <a
+                href="https://forms.gle/Z4RiWRypyp8aBDZ79"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute text-black"
+              >
+                Book Now
+              </a>
             </div>
           </div>
         </div>
@@ -186,7 +197,7 @@ export default function Home() {
               </div>
             </div>
             <Link
-              href={"/"}
+              href={"/details"}
               className="flex items-center justify-center pt-2 font-futurabc text-[#487cff] uppercase underline"
             >
               details{" "}
@@ -209,70 +220,16 @@ export default function Home() {
               </div>
               <div className="flex justify-center pt-5">
                 <button className="bg-[#FFFEEF] text-black rounded-full px-5 py-2 font-futurabc uppercase">
-                  <Link href="/your-target-url">Register now</Link>
+                  <a
+                    href="https://forms.gle/Z4RiWRypyp8aBDZ79"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Register now
+                  </a>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="relative h-[40vh] w-full overflow-hidden">
-        {/* Video Background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/footer-short-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        ></video>
-
-        {/* Dark Overlay for Readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
-
-        {/* Footer Content */}
-        <div className="relative z-10 flex flex-col gap-5 items-center justify-center h-full text-white text-center px-6 font-futuraCondensed">
-          {/* Title */}
-          <h2 className="text-4xl font-bold uppercase  border-b pb-1">
-            Stay Connected
-          </h2>
-
-          {/* Subtitle */}
-          <p className="text-lg leading-[1.3] max-w-lg mt-2 opacity-80">
-          Design. Innovate. Elevate. Join us for exclusive insights, creative challenges, and game-changing ideas!
-          </p>
-
-          {/* Social Media Links */}
-          <div className="flex space-x-6 mt-4">
-            <Link
-              href="#"
-              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
-            >
-              <span className="text-2xl transition-all hover:text-pink-400">
-                <IoLogoInstagram />
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
-            >
-              <span className="text-2xl transition-all hover:text-blue-400">
-                <FaLinkedinIn />
-              </span>
-            </Link>
-            <Link
-              href="#"
-              className="text-white hover:text-gray-300 transition duration-300 transform hover:scale-110"
-            >
-              <span className="text-2xl transition-all hover:text-red-400">
-                <SiGmail />
-              </span>
-            </Link>
-          </div>
-
-          {/* Footer Bottom */}
-          <div className="mt-6 text-xs opacity-70">
-            <p>© 2025 Ux Club. All rights reserved.</p>
           </div>
         </div>
       </div>
