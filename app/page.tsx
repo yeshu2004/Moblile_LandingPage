@@ -10,12 +10,14 @@ import { LuReceiptIndianRupee } from "react-icons/lu";
 import Link from "next/link";
 import lazyimg from "@/images/lazyy.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { motion } from "motion/react";
 import elem1 from "@/images/elem-1.png";
 
 export default function Home() {
+  const scrollTarget = useRef<HTMLDivElement | null>(null);
+
   const [isMobileView, setIsMobileView] = useState(true);
 
   useEffect(() => {
@@ -36,6 +38,15 @@ export default function Home() {
       setIsMobileView(false);
     }
   }, []);
+
+  const scrollToTarget = () => {
+    if (scrollTarget.current) {
+      scrollTarget.current!.scrollIntoView({
+        behavior: 'smooth', 
+        block: 'center', 
+      });
+    }
+  };
 
   if (!isMobileView) {
     return (
@@ -135,7 +146,7 @@ export default function Home() {
       </div>
       <div className="mt-5">
         <div className="font-futurabc uppercase flex items-center justify-evenly pt-2 ">
-          <div className="flex bg-[#FFFEEF] text-black px-4 py-2 w-fit rounded-full items-center gap-1">
+          <div className="flex bg-[#FFFEEF] text-black px-4 py-2 w-fit rounded-full items-center gap-1" onClick={scrollToTarget}>
             <span>
               <IoCalendarClearOutline />
             </span>
@@ -147,7 +158,7 @@ export default function Home() {
             </span>
             <h1>Vit bhopal uni</h1>
           </div>
-          <div className="flex bg-[#FFFEEF] text-black px-4 py-2 w-fit rounded-full items-center gap-1">
+          <div className="flex bg-[#FFFEEF] text-black px-4 py-2 w-fit rounded-full items-center gap-1" onClick={scrollToTarget}>
             <span>
               <LuReceiptIndianRupee />
             </span>
@@ -160,7 +171,7 @@ export default function Home() {
           <h1 className="uppercase font-futurabc text-2xl mb-10">
             More About the event
           </h1>
-          <div className="bg-[#FFFEEF] text-black h-full w-full rounded-2xl px-5 py-5 pt-7 relative">
+          <div ref={scrollTarget} className="bg-[#FFFEEF] text-black h-full w-full rounded-2xl px-5 py-5 pt-7 relative">
             <h1 className="absolute right-1/2 translate-x-1/2 top-1 font-mayonice text-red-500 z-10 text-lg ">
               filling fast...
             </h1>
