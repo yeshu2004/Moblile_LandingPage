@@ -127,7 +127,7 @@ export default function Home() {
               </div>
               <div className="text-xs flex flex-col items-center">
                 <h5>Monday</h5>
-                <h5>10 February 2025</h5>
+                <h5>15 February 2025</h5>
               </div>
             </div>
             <div className="text-lg w-full text-center font-futurabc uppercase flex items-center justify-center">
@@ -182,7 +182,7 @@ export default function Home() {
               <h2>Unleashed Innovation</h2>
             </div>
             <div className="font-futuraCondensed text-zinc-800 font-semibold flex items-center justify-between text-xs">
-              <h5>February 10,2025</h5>
+              <h5>February 15,2025</h5>
               <h5>1st Event</h5>
             </div>
             <div className="pt-3">

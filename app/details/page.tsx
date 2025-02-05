@@ -70,7 +70,7 @@ export default function EventDetails() {
               <div className="space-y-2">
                 <h4 className="text-xl font-futurabc">Event Details</h4>
                 <ul className="list-none space-y-1">
-                  <li>📅 Date: 10th Feb 2025</li>
+                  <li>📅 Date: 15th Feb 2025</li>
                   <li>⏰ Time: 1:30 PM – 6:00 PM</li>
                   <li>📍 Venue: Audi-1</li>
                   <li>💰 Fee: ₹99 | Prize: ₹3,000</li>
