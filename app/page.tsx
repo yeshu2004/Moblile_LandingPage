@@ -113,7 +113,7 @@ export default function Home() {
                 style={{ fontSize: "6.5vh" }}
               >
                 {" "}
-                  <span className="font-mayonice normal-case text-base">~ pre advitya event 2025</span>
+                  <span className="font-mayonice normal-case text-base">~ pre Advitya event 2025</span>
               </motion.h1>
             </div>
           </div>
