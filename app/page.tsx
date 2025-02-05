@@ -84,7 +84,7 @@ export default function Home() {
         {/* Title */}
         <div className="z-10 absolute flex flex-col items-center text-[6.5vh] leading-none bottom-1 left-1/2 -translate-x-1/2 w-full px-4">
           <div className="flex flex-col items-center uppercase font-futurabc">
-            <div className="h-fit w-fit overflow-hidden">
+            <div className="h-fit w-fit overflow-hidden ">
               <motion.h1
                 initial={{ y: 150 }}
                 animate={{ y: 0 }}
@@ -109,11 +109,11 @@ export default function Home() {
                 initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="mix-blend-difference"
+                className="mix-blend-difference flex items-center gap-1"
                 style={{ fontSize: "6.5vh" }}
               >
                 {" "}
-                2025
+                  <span className="font-mayonice normal-case text-base">~ pre advitya event 2025</span>
               </motion.h1>
             </div>
           </div>
